@@ -41,6 +41,6 @@ Challenge 06: Create three prototype functions of linked list class; append, ins
 - .insertAfter()
   - Insert a node with a given value after a specified node;
 
-# Challenge 6
+# Challenge 7
 
 ![](kthFromEnd.png)
