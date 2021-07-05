@@ -11,6 +11,7 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.size = 0;
   }
 
   insert(value) {
@@ -18,6 +19,7 @@ class LinkedList {
       throw new Error('NO THING');
     }
     this.head = new Node(value, this.head);
+    this.size = this.size + 1;
   }
 
   includes(value) {
@@ -53,11 +55,13 @@ class LinkedList {
     let current = this.head;
     if (!current) {
       this.head = new Node(value);
+      this.size = this.size + 1;
     } else {
       while (current.next) {
         current = current.next;
       }
       current.next = new Node(value);
+      this.size = this.size + 1;
     }
   }
   insertBefore(value, targetValue) {
@@ -71,6 +75,7 @@ class LinkedList {
       let temp = new Node(value);
       temp.next = current.next;
       current.next = temp;
+      this.size = this.size + 1;
     }
   }
   insertAfter(value, targetValue) {
@@ -81,6 +86,19 @@ class LinkedList {
     let temp = new Node(value);
     temp.next = current.next;
     current.next = temp;
+    this.size = this.size + 1;
+  }
+  kthFromEnd(k) {
+    let currentNode = this.head;
+    let count = this.size - 1;
+    while (currentNode) {
+      if (k === count) {
+        return currentNode.value;
+      }
+      count--;
+      currentNode = currentNode.next;
+    }
+    return 'Exception';
   }
 }
 
