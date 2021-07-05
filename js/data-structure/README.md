@@ -6,6 +6,10 @@ Code Challenges 05
 
 - Challenge 05: Create three prototype functions for single linked list class; insert, include, and toString
 
+![](inculdes.png)
+![](insert.png)
+![](tostring.png)
+
 ## Approach & Efficiency
 
 I took the approach of minimizing big O space/time by keeping my functions simplistic and focused on only what was necessary to complete the task.
@@ -24,6 +28,10 @@ Big O space is O(1) and time is O(n);
 
 Challenge 06: Create three prototype functions of linked list class; append, insert after, and insert before;
 
+![](append.png)
+![](insertafter.png)
+![](insertbefore.png)
+
 ## API
 
 - .append()
@@ -32,3 +40,7 @@ Challenge 06: Create three prototype functions of linked list class; append, ins
   - Insert a node with a given value before a specified node
 - .insertAfter()
   - Insert a node with a given value after a specified node;
+
+# Challenge 6
+
+![](kthFromEnd.png)
