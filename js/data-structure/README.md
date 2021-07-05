@@ -26,6 +26,8 @@ Big O space is O(1) and time is O(n);
 
 # Challenge 6
 
+
+
 Challenge 06: Create three prototype functions of linked list class; append, insert after, and insert before;
 
 ![](append.png)
@@ -41,6 +43,8 @@ Challenge 06: Create three prototype functions of linked list class; append, ins
 - .insertAfter()
   - Insert a node with a given value after a specified node;
 
-# challenge 6
+# challenge 7
+
+
 
 ![](kthFromEnd.png)
