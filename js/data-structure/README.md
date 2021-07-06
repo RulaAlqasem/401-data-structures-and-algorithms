@@ -30,6 +30,7 @@ Challenge 06: Create three prototype functions of linked list class; append, ins
 
 ![](append.png)
 ![](insertafter.png)
+
 ![](insertbefore.png)
 
 ## API
