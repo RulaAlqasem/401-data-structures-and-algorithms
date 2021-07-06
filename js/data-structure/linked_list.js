@@ -100,10 +100,80 @@ class LinkedList {
     }
     return 'Exception';
   }
+
 }
+
+let linkedlistss = new LinkedList;
+linkedlistss.insert(1);
+linkedlistss.append(2);
+linkedlistss.append(3);
+console.log(linkedlistss)
+let linkedlisttt = new LinkedList;
+linkedlisttt.insert(4);
+linkedlisttt.append(5);
+
+
+function zip(linkedlist1, linkedlist2) {
+  console.log("hooohoo", linkedlist1);
+  console.log("heeheee", linkedlist2);
+  let current = linkedlist1.head;
+  let current2 = linkedlist2.head;
+
+  let arr = [];
+  let llf = new LinkedList
+  let count1 = (linkedlist1.size)
+  let count2 = (linkedlist2.size)
+  let count;
+
+
+  if (count1 < count2) {
+    count = count2
+
+
+  } else {
+    count = count1
+  }
+
+  while (count) {
+    count--
+
+    if (count1 > count2 && current2 === null) {
+      arr.push(current.value)
+      current = current.next
+
+    } else if (count2 > count1 && current === null) {
+      arr.push(current2.value);
+      current2 = current2.next
+      console.log("d");
+
+    }
+    else {
+
+
+      arr.push(current.value);
+      current = current.next
+
+      arr.push(current2.value)
+      current2 = current2.next
+    }
+
+  }
+
+
+  arr.map((ele, idx) => {
+
+    llf.append(ele)
+
+  })
+
+  return llf;
+}
+
+zip(linkedlistss, linkedlisttt);
 
 
 module.exports = {
   ll: LinkedList,
-  node: Node
+  node: Node,
+  zip
 };

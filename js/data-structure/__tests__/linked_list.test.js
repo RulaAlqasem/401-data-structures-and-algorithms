@@ -4,6 +4,7 @@ const linkedListMaster = require('../linked_list');
 
 const linkedList = linkedListMaster.ll;
 const Node = linkedListMaster.node;
+const zip = linkedListMaster.zip;
 
 
 describe('testing linked list instantiation', () => {
@@ -181,4 +182,74 @@ describe('testing linked list kthFromEnd function', () => {
     ll.insert(1);
     expect(ll.kthFromEnd(2)).toEqual(2);
   });
+});
+
+describe('testing  zip function', () => {
+  it('same size for two linked list ', () => {
+    let linkedlistss = new linkedList;
+    linkedlistss.insert(1);
+    linkedlistss.append(2);
+    linkedlistss.append(3);
+    let linkedlisttt = new linkedList;
+    linkedlisttt.insert(4);
+    linkedlisttt.append(5);
+    linkedlisttt.append(6);
+    let ll = zip(linkedlistss, linkedlisttt);
+    expect(ll.head.value).toEqual(1);
+    expect(ll.head.next.value).toEqual(4);
+    expect(ll.head.next.next.value).toEqual(2);
+  });
+  it('first linked list greater than second linked list ', () => {
+    let linkedlistss = new linkedList;
+    linkedlistss.insert(1);
+    linkedlistss.append(2);
+    linkedlistss.append(3);
+
+    let linkedlisttt = new linkedList;
+    linkedlisttt.insert(4);
+    linkedlisttt.append(5);
+
+    let ll = zip(linkedlistss, linkedlisttt);
+    expect(ll.head.value).toEqual(1);
+    expect(ll.head.next.value).toEqual(4);
+    expect(ll.head.next.next.value).toEqual(2);
+    expect(ll.head.next.next.next.value).toEqual(5);
+    expect(ll.head.next.next.next.next.value).toEqual(3);
+    expect(ll.head.next.next.next.next.next).toEqual(null);
+  });
+  it('second linked list greater than first linked list ', () => {
+    let linkedlistss = new linkedList;
+    linkedlistss.insert(1);
+    linkedlistss.append(2);
+    let linkedlisttt = new linkedList;
+    linkedlisttt.insert(4);
+    linkedlisttt.append(5);
+    linkedlistss.append(3);
+
+    let ll = zip(linkedlistss, linkedlisttt);
+    expect(ll.head.value).toEqual(1);
+    expect(ll.head.next.value).toEqual(4);
+    expect(ll.head.next.next.value).toEqual(2);
+    expect(ll.head.next.next.next.value).toEqual(5);
+    expect(ll.head.next.next.next.next.value).toEqual(3);
+    expect(ll.head.next.next.next.next.next).toEqual(null);
+  });
+  it('second linked list greater than first linked list ', () => {
+    let linkedlistss = new linkedList;
+    linkedlistss.insert('a');
+    linkedlistss.append('b');
+    let linkedlisttt = new linkedList;
+    linkedlisttt.insert(4);
+    linkedlisttt.append(5);
+    linkedlistss.append(3);
+
+    let ll = zip(linkedlistss, linkedlisttt);
+    expect(ll.head.value).toEqual('a');
+    expect(ll.head.next.value).toEqual(4);
+    expect(ll.head.next.next.value).toEqual('b');
+    expect(ll.head.next.next.next.value).toEqual(5);
+    expect(ll.head.next.next.next.next.value).toEqual(3);
+    expect(ll.head.next.next.next.next.next).toEqual(null);
+  });
+
 });
