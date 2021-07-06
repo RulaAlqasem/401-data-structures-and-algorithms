@@ -103,19 +103,11 @@ class LinkedList {
 
 }
 
-let linkedlistss = new LinkedList;
-linkedlistss.insert(1);
-linkedlistss.append(2);
-linkedlistss.append(3);
-console.log(linkedlistss)
-let linkedlisttt = new LinkedList;
-linkedlisttt.insert(4);
-linkedlisttt.append(5);
+
 
 
 function zip(linkedlist1, linkedlist2) {
-  console.log("hooohoo", linkedlist1);
-  console.log("heeheee", linkedlist2);
+
   let current = linkedlist1.head;
   let current2 = linkedlist2.head;
 
@@ -144,7 +136,7 @@ function zip(linkedlist1, linkedlist2) {
     } else if (count2 > count1 && current === null) {
       arr.push(current2.value);
       current2 = current2.next
-      console.log("d");
+
 
     }
     else {
@@ -169,7 +161,7 @@ function zip(linkedlist1, linkedlist2) {
   return llf;
 }
 
-zip(linkedlistss, linkedlisttt);
+
 
 
 module.exports = {
