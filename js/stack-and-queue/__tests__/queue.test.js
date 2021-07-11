@@ -27,7 +27,7 @@ describe('testing Queue', () => {
     queue1.dequeue();
     expect(queue1.front.value).toEqual(5);
   });
-  it('an successfully empty a queue after multiple dequeues', () => {
+  it('Can successfully empty a queue after multiple dequeues', () => {
     queue1.enqueue(2);
     queue1.enqueue(3);
     queue1.enqueue(1);
