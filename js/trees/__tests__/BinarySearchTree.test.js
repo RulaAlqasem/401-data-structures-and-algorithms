@@ -58,10 +58,21 @@ describe('Binary Tree', () => {
   it('Can successfully instantiate a tree with a single root node', () => {
 
     const one = new Node(1);
-    tree2 = new BinarySearchTree(one);
-
+    tree2 = new BinarySearchTree;
+    tree2.add(2)
     console.log(tree2);
-    expect(tree2.root.value).toEqual(1);
+    expect(tree2.root.value).toEqual(2);
   });
+  it('Contains return true if tree cntains the value', () => {
 
+
+
+    expect(tree.Contains(10)).toEqual(true);
+  });
+  it('Contains return false if tree cntains the value', () => {
+
+
+
+    expect(tree.Contains(99)).toBeFalsy();
+  });
 });

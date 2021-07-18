@@ -89,38 +89,52 @@ class BinarySearchTree {
     return postOrder;
   }
   add(value) {
-    var newNode = new Node(value);
-    if (this.root === null) this.root = newNode;
-    else this.insertNode(this.root, newNode);
-  }
-  insertNode(node, newNode) {
-    if (newNode.value < node.value) {
-      if (node.left === null) node.left = newNode;
-      else this.insertNode(node.left, newNode);
-    }
-    else {
 
-      if (node.right === null)
-        node.right = newNode;
-      else
-        this.insertNode(node.right, newNode);
+    let newNode = new Node(value);
+    let insertNode = (node, newNode) => {
+      if (newNode.value < node.value) {
+        if (node.left === null) node.left = newNode;
+        else insertNode(node.left, newNode);
+      }
+      else {
+
+        if (node.right === null)
+          node.right = newNode;
+        else
+          insertNode(node.right, newNode);
+      }
     }
+    if (!this.root) this.root = newNode;
+    else insertNode(this.root, newNode);
+
+
   }
+
   Contains(value) {
-    let current = this.root
-    while (current.value !== value && current !== null) {
-      if (current.value > value) {
-        current = current.left
+    if (!this.root) return false;
+
+    let current = this.root;
+    let contains = false;
+    while (current && !contains) {
+      if (value < current.value) {
+        current = current.left;
       }
-      if (current.value < value) {
-        current = current.Right
+
+      else if (value > current.value) {
+        current = current.right;
+
+      } else {
+        contains = true;
       }
     }
-    if (current.value === value) return true
-    if (current.value !== value) return false
+
+    if (!contains) {
+
+      return false;
+    }
+
+    return contains;
   }
-
-
 
 }
 
