@@ -1,10 +1,14 @@
 # Trees
+
 <!-- Short summary or background information -->
-binary tree preeorder postorder inorder 
-binary search tree add contains 
+
+binary tree preeorder postorder inorder
+binary search tree add contains
 
 ## Challenge
+
 <!-- Description of the challenge -->
+
 Binary Tree
 Create a Binary Tree class
 Define a method for each of the depth first traversals:
@@ -23,6 +27,6 @@ Contains
 Argument: value
 Returns: boolean indicating whether or not the value is in the tree at least once.
 
+## code challenge 16 :Find the Maximum Value in a Binary Tree
 
-
-
+![](./treesmax.png)

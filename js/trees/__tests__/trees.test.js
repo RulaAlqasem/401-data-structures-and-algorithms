@@ -40,4 +40,8 @@ describe('Binary Tree', () => {
     let expected = [8, 9, 7, 6, 2, 4, 5, 3, 1];
     expect(tree.postOrder()).toEqual(expected);
   });
+  it('return maximum value', () => {
+    let expected = [8, 9, 7, 6, 2, 4, 5, 3, 1];
+    expect(tree.maximumValue()).toEqual(9);
+  });
 });
