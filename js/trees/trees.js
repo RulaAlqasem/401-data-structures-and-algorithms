@@ -47,6 +47,12 @@ class BinaryTree {
     _traverse(this.root);
     return postOrder;
   }
+
+  maximumValue() {
+    let arr = this.postOrder()
+    arr.sort((a, b) => b - a);
+    return arr[0]
+  }
 }
 
 class BinarySearchTree {
