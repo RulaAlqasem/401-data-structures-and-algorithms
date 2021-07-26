@@ -1,6 +1,7 @@
 const bt = require('../trees');
 let Node = bt.Node
 let BinarySearchTree = bt.BinarySearchTree
+let treeBreadthBirst = bt.treeBreadthBirst
 
 describe('Binary Tree', () => {
   let tree;
@@ -39,6 +40,10 @@ describe('Binary Tree', () => {
   it('postorder', () => {
     let expected = [8, 9, 7, 6, 2, 4, 5, 3, 1];
     expect(tree.postOrder()).toEqual(expected);
+  });
+  it('return bf trees', () => {
+    let expected = [1, 2, 3, 6, 4, 5, 7, 8, 9];
+    expect(treeBreadthBirst(tree)).toEqual(expected);
   });
   it('Can successfully add a right child ', () => {
     let expectedArr = [1, 2, 6, 7, 8, 9, 3, 4, 5, 10];
