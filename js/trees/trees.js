@@ -53,6 +53,8 @@ class BinaryTree {
     arr.sort((a, b) => b - a);
     return arr[0]
   }
+
+
 }
 
 class BinarySearchTree {
@@ -143,9 +145,26 @@ class BinarySearchTree {
   }
 
 }
+treeBreadthBirst = (tree) => {
+  let tbb = [],
+    queue = [],
+    current = tree.root;
+
+  queue.push(current);
+  while (queue.length) {
+    current = queue.shift();
+    tbb.push(current.value);
+
+    if (current.left) queue.push(current.left);
+    if (current.right) queue.push(current.right);
+  };
+
+  return tbb;
+}
 
 module.exports = {
   Node: Node,
   BinaryTree: BinaryTree,
-  BinarySearchTree: BinarySearchTree
+  BinarySearchTree: BinarySearchTree,
+  treeBreadthBirst: treeBreadthBirst
 }
