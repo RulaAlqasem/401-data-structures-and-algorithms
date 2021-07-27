@@ -2,6 +2,7 @@ const bt = require('../trees');
 let Node = bt.Node
 let BinarySearchTree = bt.BinarySearchTree
 let treeBreadthBirst = bt.treeBreadthBirst
+let fizzBuzz = bt.fizzBuzz
 
 describe('Binary Tree', () => {
   let tree;
@@ -31,6 +32,7 @@ describe('Binary Tree', () => {
     console.log(tree.preOrder())
     expect(tree.preOrder()).toEqual(expectedArr);
   });
+
   // left - root - right
   it('inorder', () => {
     let expected = [6, 8, 7, 9, 2, 1, 4, 3, 5];
@@ -45,16 +47,17 @@ describe('Binary Tree', () => {
     let expected = [1, 2, 3, 6, 4, 5, 7, 8, 9];
     expect(treeBreadthBirst(tree)).toEqual(expected);
   });
-  it('Can successfully add a right child ', () => {
-    let expectedArr = [1, 2, 6, 7, 8, 9, 3, 4, 5, 10];
 
-    tree.add(10)
+  it('Can successfully add a right child ', () => {
+    let expectedArr = [1, 2, 6, 7, 8, 9, 3, 4, 5, 15];
+
+    tree.add(15)
 
     console.log(tree.preOrder());
     expect(tree.preOrder()).toEqual(expectedArr);
   });
   it('Can successfully add a  left child to a single root node', () => {
-    let expectedArr = [1, 2, 6, 0, 7, 8, 9, 3, 4, 5, 10];
+    let expectedArr = [1, 2, 6, 0, 7, 8, 9, 3, 4, 5, 15];
 
     tree.add(0)
     console.log('lnnlll', tree.postOrder());
@@ -72,12 +75,19 @@ describe('Binary Tree', () => {
 
 
 
-    expect(tree.Contains(10)).toEqual(true);
+    expect(tree.Contains(15)).toEqual(true);
   });
   it('Contains return false if tree cntains the value', () => {
 
 
 
     expect(tree.Contains(99)).toBeFalsy();
+  });
+  it('fizzBuzz', () => {
+    let expected = ["1", "2", "Fizz", "FizzBuzz", "7", "8", "Fizz", "Fizz", "4", "Buzz", 'FizzBuzz'];
+    let fizzBuzztree = fizzBuzz(tree)
+
+    // console.log("jjjjj", newTree);
+    expect(fizzBuzztree.preOrder()).toEqual(expected);
   });
 });

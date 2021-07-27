@@ -47,6 +47,11 @@ class BinaryTree {
     _traverse(this.root);
     return postOrder;
   }
+  /****************************************/
+  /*******//////////////////////**********/
+  /******///code challenge 16///**********/
+  /******//////////////////////*********/
+  /************************************/
 
   maximumValue() {
     let arr = this.postOrder()
@@ -59,7 +64,7 @@ class BinaryTree {
     return maximumValue
   }
 
-
+  /************************************/
 }
 
 class BinarySearchTree {
@@ -150,6 +155,11 @@ class BinarySearchTree {
   }
 
 }
+/****************************************/
+/*******//////////////////////**********/
+/******///code challenge 17///**********/
+/******//////////////////////*********/
+/************************************/
 treeBreadthBirst = (tree) => {
   let tbb = [],
     queue = [],
@@ -166,10 +176,44 @@ treeBreadthBirst = (tree) => {
 
   return tbb;
 }
+/************************************/
+
+
+/****************************************/
+/*******//////////////////////**********/
+/******///code challenge 18///**********/
+/******//////////////////////*********/
+/************************************/
+fizzBuzz = (tree) => {
+  if (!tree.root) return false;
+  let newTree = tree
+
+  let fizz = 'Fizz';
+  let buzz = 'Buzz';
+  let fizzbuzz = 'FizzBuzz'
+  let current = newTree.root
+  let queue = []
+  queue.push(current);
+  while (queue.length) {
+    current = queue.shift();
+    if ((current.value % 5 && current !== null) === 0 && (current.value % 3) === 0) current.value = fizzbuzz
+    else if ((current.value % 3) === 0 && current !== null) current.value = fizz
+    else if ((current.value % 5 && current !== null) === 0) current.value = buzz
+
+    else if ((current.value % 5 && current !== null) !== 0 && (current.value % 3) !== 0) current.value = `${current.value}`
+
+    if (current.left) queue.push(current.left);
+    if (current.right) queue.push(current.right);
+  };
+  console.log(newTree);
+  return newTree;
+}
+/************************************/
 
 module.exports = {
   Node: Node,
   BinaryTree: BinaryTree,
   BinarySearchTree: BinarySearchTree,
-  treeBreadthBirst: treeBreadthBirst
+  treeBreadthBirst: treeBreadthBirst,
+  fizzBuzz: fizzBuzz
 }
