@@ -47,3 +47,7 @@ Define a method:
 ## code challenge 17: treeBreadthBirst
 
 ![](./lab17ch.png)
+
+## code challenge 18: FizzBuzz
+
+![](./ch18wb.png)

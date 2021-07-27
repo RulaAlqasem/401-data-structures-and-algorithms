@@ -3,6 +3,7 @@ const bt = require('../trees');
 let Node = bt.Node
 let BinaryTree = bt.BinaryTree
 let treeBreadthBirst = bt.treeBreadthBirst
+let fizzBuzz = bt.fizzBuzz
 
 describe('Binary Tree', () => {
   let tree;
@@ -48,5 +49,11 @@ describe('Binary Tree', () => {
   it('return bf trees', () => {
     let expected = [1, 2, 3, 6, 4, 5, 7, 8, 9];
     expect(treeBreadthBirst(tree)).toEqual(expected);
+  });
+  it('fizzBuzz', () => {
+    let expected = ["1", "2", "Fizz", "Fizz", "4", "Buzz", "7", "8", "Fizz",];
+    let fb = fizzBuzz(tree)
+    console.log();
+    expect(treeBreadthBirst(fb)).toEqual(expected);
   });
 });
