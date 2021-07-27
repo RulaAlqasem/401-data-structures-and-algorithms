@@ -50,8 +50,13 @@ class BinaryTree {
 
   maximumValue() {
     let arr = this.postOrder()
-    arr.sort((a, b) => b - a);
-    return arr[0]
+    let maximumValue = arr[0]
+    for (let index = 0; index < arr.length; index++) {
+      if (arr[index] > maximumValue) {
+        maximumValue = arr[index]
+      }
+    }
+    return maximumValue
   }
 
 

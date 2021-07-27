@@ -42,7 +42,7 @@ Define a method:
 
 ## code challenge 16 :Find the Maximum Value in a Binary Tree
 
-![](./treesmax.png)
+![](./ch16new.png)
 
 ## code challenge 17: treeBreadthBirst
 
